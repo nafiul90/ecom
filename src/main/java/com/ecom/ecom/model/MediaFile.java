@@ -1,0 +1,62 @@
+package com.ecom.ecom.model;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+
+@Data
+@NoArgsConstructor
+@ToString
+@Entity
+
+public class MediaFile {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
+
+    @NotBlank(message = "File type is mandatory")
+    @Size(min = 3,max = 10,message = "File type should be between 3 and 10 character long")
+    private String fileType;  // image or video
+
+    @NotBlank(message = "url is mandatory")
+    //@Min(value = 5,message = "url should be at least 5 character long")
+    private String url;       // the file path only
+
+    public MediaFile(String fileType, String url) {
+        this.fileType = fileType;
+        this.url = url;
+    }
+
+//    public long getId() {
+//        return id;
+//    }
+//
+//    public void setId(long id) {
+//        this.id = id;
+//    }
+//
+//    public String getFileType() {
+//        return fileType;
+//    }
+//
+//    public void setFileType(String fileType) {
+//        this.fileType = fileType;
+//    }
+//
+//    public String getUrl() {
+//        return url;
+//    }
+//
+//    public void setUrl(String url) {
+//        this.url = url;
+//    }
+}
