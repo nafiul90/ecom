@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+import java.util.Map;
 
 @Data
 @NoArgsConstructor
@@ -36,27 +37,4 @@ public class MediaFile {
         this.url = url;
     }
 
-//    public long getId() {
-//        return id;
-//    }
-//
-//    public void setId(long id) {
-//        this.id = id;
-//    }
-//
-//    public String getFileType() {
-//        return fileType;
-//    }
-//
-//    public void setFileType(String fileType) {
-//        this.fileType = fileType;
-//    }
-//
-//    public String getUrl() {
-//        return url;
-//    }
-//
-//    public void setUrl(String url) {
-//        this.url = url;
-//    }
 }

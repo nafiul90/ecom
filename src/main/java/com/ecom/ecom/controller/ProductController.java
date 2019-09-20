@@ -19,7 +19,7 @@ import java.util.List;
 public class ProductController {
 
     private ProductService productService;
-    private final String allowedClientUrl = "http://localhost:3000";//"http://localhost:3000";
+    private final String allowedClientUrl = "https://ns471.csb.app";//"http://localhost:3000";
 
     public ProductController(ProductService productService) {
         this.productService = productService;
@@ -47,13 +47,12 @@ public class ProductController {
         return productService.getAllProductsByName(name);
     }
 
+
     @CrossOrigin(origins = allowedClientUrl)
-    @PostMapping("add-product")
+    @PostMapping("add")
     @ResponseBody
-    ResponseEntity<Product> addProduct(@Valid @RequestBody Product product){
-        //first time create a product and save to database.
-        //Product product = createProductDemo();
-        return productService.saveProduct(product);
+    ResponseEntity<Product> addProduct(@ModelAttribute ProductFormWrapper model){
+        return productService.saveProduct(model);
     }
 
     @CrossOrigin(origins = allowedClientUrl)
@@ -74,6 +73,19 @@ public class ProductController {
 
 
 
+    //for the first time to load a product to database.
+
+//    @CrossOrigin(origins = allowedClientUrl)
+//    @GetMapping("add-product")
+//    @ResponseBody
+//    ResponseEntity<Product> addProduct(){
+//        //first time create a product and save to database.
+//        Product product = createProductDemo();
+//        return productService.saveProduct(product);
+//    }
+
+
+
     //for first time to create a product.
     Product createProductDemo(){
         Attribute attribute1 = new Attribute("color","red");
@@ -85,11 +97,11 @@ public class ProductController {
         attributeList.add(attribute1);
         attributeList.add(attribute2);
 
-        MediaFile thumbnailImage = new MediaFile("image","fileUrlDemo");
+        MediaFile thumbnailImage = new MediaFile("image","images/15731758_1246822835406528_7682924181082703970_o.jpg");
 
 
-        MediaFile mediaFile1 = new MediaFile("image","fileUrlDemo");
-        MediaFile mediaFile2 = new MediaFile("image","fileUrlDemo");
+        MediaFile mediaFile1 = new MediaFile("image","images/15731758_1246822835406528_7682924181082703970_o.jpg");
+        MediaFile mediaFile2 = new MediaFile("image","images/15731758_1246822835406528_7682924181082703970_o.jpg");
 
 
         List<MediaFile> mediaFileList = new ArrayList<>();

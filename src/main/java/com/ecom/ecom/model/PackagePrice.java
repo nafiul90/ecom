@@ -38,27 +38,4 @@ public class PackagePrice {
         this.price = price;
     }
 
-//    public long getId() {
-//        return id;
-//    }
-//
-//    public void setId(long id) {
-//        this.id = id;
-//    }
-//
-//    public int getPiece() {
-//        return piece;
-//    }
-//
-//    public void setPiece(int piece) {
-//        this.piece = piece;
-//    }
-//
-//    public double getPrice() {
-//        return price;
-//    }
-//
-//    public void setPrice(double price) {
-//        this.price = price;
-//    }
 }
