@@ -13,7 +13,7 @@ Order module:
     get    : https://nafiul-ecom.herokuapp.com/order/id/<order_id>               methodName : getOrderById
     get    : https://nafiul-ecom.herokuapp.com/order/                            methodName : getAllOrder
     get    : https://nafiul-ecom.herokuapp.com/order/customer-id/<customer_id>   methodName : getAllOrdersByCustomerId
-    post   : https://nafiul-ecom.herokuapp.com/order/add                         methodName : addOrder
+    post   : https://nafiul-ecom.herokuapp.com/order/add/                         methodName : addOrder
 
 Cart module:
     get    : https://nafiul-ecom.herokuapp.com/cart/                            methodName : getAllCart
@@ -24,11 +24,11 @@ Cart module:
 
 Payment module:
     get    : https://nafiul-ecom.herokuapp.com/payment/                         methodName : getAllPayments
-    get    : https://nafiul-ecom.herokuapp.com/payment/add                      methodName : addPayment
+    get    : https://nafiul-ecom.herokuapp.com/payment/add/                      methodName : addPayment
 
 Customer module:
     get    : https://nafiul-ecom.herokuapp.com/customer/                        methodName : getAllCustomers
     get    : https://nafiul-ecom.herokuapp.com/customer/id/<customer_id>        methodName : getCustomerById
-    post   : https://nafiul-ecom.herokuapp.com/customer/add                     methodName : addCustomer
+    post   : https://nafiul-ecom.herokuapp.com/customer/add/                     methodName : addCustomer
     update : https://nafiul-ecom.herokuapp.com/customer/update/                 methodName : updateCustomer deleteCustomerById
     update : https://nafiul-ecom.herokuapp.com/customer/delete/id/<customer_id> methodName : deleteCustomerById
